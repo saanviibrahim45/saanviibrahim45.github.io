@@ -1,10 +1,9 @@
 :root {
-  --primary: #1c355e;
-  --accent: #d4af37;
-  --slate: #718096;
-  --background: #f8f9fa;
-  --text: #2d2d2d;
-  --card: #ffffff;
+  --primary: #00b7c2; /* Sophisticated teal */
+  --background: #0a0e17; /* Dark navy-black */
+  --text: #ffffff;
+  --card: #1a1f2b; /* Slightly lighter than background for depth */
+  --muted: #c0c7d6;
 }
 
 * {
@@ -19,6 +18,14 @@ body {
   color: var(--text);
 }
 
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -27,8 +34,8 @@ body {
 .sidebar {
   width: 250px;
   background: var(--card);
-  border-right: 1px solid #e0e0e0;
   padding: 2rem 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   position: sticky;
   top: 0;
   height: 100vh;
@@ -42,20 +49,19 @@ body {
 
 .sidebar .title {
   font-size: 0.9rem;
-  color: var(--slate);
+  color: var(--muted);
   margin-bottom: 2rem;
 }
 
 .sidebar nav a {
   display: block;
   margin: 0.75rem 0;
-  color: var(--primary);
-  text-decoration: none;
+  color: var(--text);
   font-weight: 500;
 }
 
 .sidebar nav a:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .content {
@@ -67,7 +73,7 @@ body {
 
 h2 {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0 1rem;
   color: var(--primary);
 }
 
@@ -75,29 +81,29 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin: 1rem 0;
 }
 
 .card {
   background: var(--card);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  border-left: 4px solid var(--accent);
-  transition: transform 0.2s ease;
+  box-shadow: 4px 4px 0 var(--primary);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--primary);
 }
 
 .card h3 {
+  color: var(--text);
   margin-top: 0.5rem;
-  color: var(--primary);
 }
 
 .card p {
-  color: var(--slate);
+  color: var(--muted);
   font-size: 0.95rem;
   margin-top: 0.5rem;
 }
@@ -105,6 +111,6 @@ h2 {
 .card img {
   width: 36px;
   height: 36px;
-  object-fit: contain;
   margin-bottom: 0.5rem;
+  filter: invert(90%) brightness(200%);
 }
