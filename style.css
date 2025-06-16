@@ -1,9 +1,9 @@
 :root {
-  --primary: #00b7c2; /* Sophisticated teal */
-  --background: #0a0e17; /* Dark navy-black */
+  --primary: #00b7c2; /* light teal */
+  --background: #0a0e17; /* dark navy-black */
   --text: #ffffff;
   --card: #1a1f2b; /* Slightly lighter than background for depth */
-  --muted: #c0c7d6;
+  --muted: #c0c7d6; /*text color*/
 }
 
 * {
@@ -114,3 +114,23 @@ h2 {
   margin-bottom: 0.5rem;
   filter: invert(90%) brightness(200%);
 }
+
+.card.productI-image-card {
+  padding: 0;
+  height: 148px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures no scrollbars if image spills */
+}
+
+.card.productI-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills card completely */
+  border-radius: 20px;
+  padding: 0; /* Removes internal spacing so it fills the card */
+  filter: none;
+}
+
